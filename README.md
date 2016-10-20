@@ -34,23 +34,7 @@ ESTMusicIndicator is an implementation of [NAKPlaybackIndicatorView](https://git
 <img src="http://ww1.sinaimg.cn/large/76dc7f1bgw1eznwh2vtipg20ku11277j.gif" width="350" height="667" alt="MusicIndicator"/>
 </p>
 
-## Run the Demo
-
-```bash
-$ open Example/ESTMusicIndicator.xcodeproj
-```
-
 ## Installation
-
-### CocoaPods
-
-CocoaPods is a dependency manager for Cocoa projects.
-
-CocoaPods 0.36 adds supports for Swift and embedded frameworks. You can install it with the following command:
-
-```bash
-$ gem install cocoapods
-```
 
 To integrate ESTMusicIndicatorView into your Xcode project using CocoaPods, specify it in your Podfile:
 
@@ -59,7 +43,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'ESTMusicIndicator'
+pod 'ESTMusicIndicator', :git => 'https://github.com/davidseek/ESTMusicIndicator.git'
 ```
 
 Then, run the following command:
@@ -81,7 +65,7 @@ Simple Example:
 
 ```swift
 let indicator = ESTMusicIndicatorView.init(frame: CGRectZero)
-indicator.tintColor = UIColor.redColor()
+indicator.tintColor = UIColor.red
 indicator.sizeToFit()
 view.addSubview(indicator)
 ```
@@ -92,19 +76,19 @@ Thus, the view is hidden at this time.
 The view appears and the bars start animation.
 
 ```swift
-indicator.state = .ESTMusicIndicatorViewStatePlaying;
+indicator.state = .eSTMusicIndicatorViewStatePlaying
 ```
 
 The bars stop animation and become idle.
 
 ```swift
-indicator.state = .ESTMusicIndicatorViewStatePaused;
+indicator.state = .eSTMusicIndicatorViewStatePaused
 ```
 
 The view becomes hidden.
 
 ```swift
-indicator.state = .ESTMusicIndicatorViewStateStopped;
+indicator.state = .eSTMusicIndicatorViewStateStopped
 ```
 
 You can use ESTMusicIndicatorView in both code and Storyboard, and it works well with both Auto Layout and frame-based layout.
